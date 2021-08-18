@@ -19,9 +19,8 @@ jobs:
         go-version: 1.16
 
     - name: Build
-      run:  sudo apt-get install libpcap-dev &&  go get -v -u github.com/40t/go-sniffer && ls -l  $(go env GOPATH)/bin/
-
+      run:  sudo apt-get install libpcap-dev &&  go get -v -u github.com/40t/go-sniffer && cp -rf $(go env GOPATH)/bin/go-sniffer /usr/local/bin
     - uses: actions/upload-artifact@v2
       with:
         name: gosniff
-        path: $(go env GOPATH)/bin/go-sniffer
+        path: /usr/local/bin/go-sniffer
