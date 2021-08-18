@@ -19,6 +19,6 @@ jobs:
         go-version: 1.16
 
     - name: Build
-      run:  apt-get install libpcap-dev &&  go get -v -u github.com/40t/go-sniffer
+      run:  sudo apt-get install libpcap-dev &&  go get -v -u github.com/40t/go-sniffer
 
    
